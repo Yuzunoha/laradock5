@@ -41,4 +41,15 @@
     docker-compose up -d nginx mysql workspace phpmyadmin
     ```
 
+1. workspaceコンテナに接続する。ユーザ指定が重要。コンテナ内で作られたファイルへの権限をhost側で得るため
+    ```
+    docker-compose exec --user=laradock workspace bash
+    ```
+
+1. workspaceコンテナ内でlaravel初期化する
+    ```
+    composer create-project laravel/laravel sampleapp --prefer-dist
+    ```
+
+
 [link1]:https://qiita.com/ucan-lab/items/90f74ce801618830e4fc
