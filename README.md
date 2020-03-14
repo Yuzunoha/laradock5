@@ -51,7 +51,7 @@
     composer create-project laravel/laravel sampleapp --prefer-dist
     ```
 
-1. **laradockの**.envを変更する(プロジェクトフォルダ)
+1. **laradockの**.envを編集する
     - APP_CODE_PATH_HOST: ../ -> ../sampleapp/
 
 1. **laradockの**.envを変更したのでdockerを再起動する
@@ -60,6 +60,29 @@
     docker-compose down
     docker-compose up -d nginx mysql workspace phpmyadmin
     ```
+
+1. **laravelの**.gitignoreから.envを削除する
+
+1. **laravelの**.envを編集する
+    - 編集前
+      ```
+      DB_CONNECTION=mysql
+      DB_HOST=127.0.0.1
+      DB_PORT=3306
+      DB_DATABASE=laravel
+      DB_USERNAME=root
+      DB_PASSWORD=
+      ```
+
+    - 編集後
+      ```
+      DB_CONNECTION=mysql
+      DB_HOST=mysql
+      DB_PORT=3306
+      DB_DATABASE=default
+      DB_USERNAME=default
+      DB_PASSWORD=secret
+      ```
 
 
 [link1]:https://qiita.com/ucan-lab/items/90f74ce801618830e4fc
