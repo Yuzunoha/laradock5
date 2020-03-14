@@ -54,9 +54,6 @@
 1. **laradockの**.envを変更する(プロジェクトフォルダ)
     - APP_CODE_PATH_HOST: ../ -> ../sampleapp/
 
-1. **laradockの**.envを変更する(データ保存場所)
-    - DATA_PATH_HOST: ~/.laradock/data -> .laradock/data
-
 1. **laradockの**.envを変更したのでdockerを再起動する
     ```
     # docker-compose restart では不可の模様
