@@ -29,4 +29,16 @@
 
 1. laradockの.gitignoreファイルから.envを消す
 
+1. mysql/my.cnfの[mysqld]に`default-authentication-plugin=mysql_native_password`が無ければ追記する
+
+1. .envのportを書き換える
+    - NGINX_HOST_HTTP_PORT: 80 -> 20080
+    - MYSQL_PORT: 3306 -> 23306
+    - PMA_PORT: 8080 -> 28080
+
+1. Dockerを起動する
+    ```
+    docker-compose up -d nginx mysql workspace phpmyadmin
+    ```
+
 [link1]:https://qiita.com/ucan-lab/items/90f74ce801618830e4fc
